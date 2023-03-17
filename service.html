@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.png">
+
+    <title>Aneka Digital</title>
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dist/css/style.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+	<script type="text/javascript" src="dist/js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="dist/js/detectmobilebrowser.jq.js"></script>
+	<script>
+	$(document).ready(function() {
+		if(jQuery.browser.mobile){
+			window.location.href = '$(link-login-only)?dst=$(link-orig-esc)&target=mobile';
+		}
+	})
+	</script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <div class="bg">
+
+	  $(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+		<script type="text/javascript" src="md5.js"></script>
+		<script type="text/javascript">
+		<!--
+			function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+			}
+		//-->
+		<!--
+		</script>
+	  $(endif)
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-brand" style="margin-top:-15px;"><img src="img/aneka22.png" class="img-responsive" width="140"></div>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li ><a href="login.html">Beranda<i class="fa fa-home"></i></a></li>
+					<li class="active"><a href="service.html">Informasi Voucher <i class="fa fa-cog"></i></a></li>
+					<li ><a href="about.html">Tentang kami <i class="fa fa-exclamation-circle"></i></a></li>
+					<li class="dropdown">
+						<a href="status.html" class="dropdown-toggle" data-toggle="dropdown" style="text-transform: uppercase;"><i class="fa fa-user fa-fw"></i> $(mac) <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li class="divider"></li>
+							<li>
+								<a>
+									<form action="status.html" metode="get">
+										<button type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-default btn-block"><i class="fa fa-clock-o fa-fw"></i>Sisa Waktu</button>
+									</form>
+									<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+										<button type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-default btn-block"><i class="fa fa-sign-out fa-fw"></i>Keluar</button>
+									</form>
+								</a>
+							</li>
+						</ul>
+					</li>					
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+    </div>
+
+	<!-- Main Header -->
+	<div class="row box-top">
+		<div class="container">
+			<div class="col-xs-10 col-sm-4 col-md-3">
+				<div class="demo">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3 col-sm-4">
+								<div class="pricingTable">
+									<div class="pricingTable-header">
+										<h3 class="title"><b>Voucher Harian</b></h3>
+									</div>
+									<div class="price-value">
+										<span class="amount">Rp.3.000,-</span>
+										<span class="duration">/Hari</span>
+									</div>
+									<ul class="content-list">
+										<li class="active">Hanya Untuk 1 Perangkat</li>
+										<li class="active">Bandwith Standart</li>
+									</ul>
+									<div class="pricingTable-signup">
+										<a onClick="alert ('Mohon Maaf Untuk Sementara Pembelian Voucher dan Pembayaran Hanya Bisa dilakukan di Toko Aneka, Untuk Alamat lengkapnya bisa dilihat pada halaman berikutnya Terima Kasih &#128522;')">Beli</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4">
+								<div class="pricingTable yellow">
+									<div class="pricingTable-header">
+										<h3 class="title"><b>Voucher Mingguan</b></h3>
+									</div>
+									<div class="price-value">
+										<span class="amount">Rp.15.000,-</span>
+										<span class="duration">/Minggu</span>
+									</div>
+									<ul class="content-list">
+										<li class="active">Hanya Untuk 1 Perangkat</li>
+										<li class="active">Bandwith Standart</li>
+									</ul>
+									<div class="pricingTable-signup">
+										<a onClick="alert('Mohon Maaf Untuk Sementara Pembelian Voucher dan Pembayaran Hanya Bisa dilakukan di Toko Aneka, Untuk Alamat lengkapnya bisa dilihat pada halaman berikutnya Terima Kasih &#128522;')">Beli</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4">
+								<div class="pricingTable red">
+									<div class="pricingTable-header">
+										<h3 class="title"><b>Voucher Bulanan</b></h3>
+									</div>
+									<div class="price-value">
+										<span class="amount">Rp.40.000,-</span>
+										<span class="duration">/Bulan</span>
+									</div>
+									<ul class="content-list">
+										<li class="active">Hanya Untuk 1 Perangkat</li>
+										<li class="active">Bandwith Standart</li>
+									</ul>
+									<div class="pricingTable-signup">
+										<a onClick="alert('Mohon Maaf Untuk Sementara Pembelian Voucher dan Pembayaran Hanya Bisa dilakukan di Toko Aneka, Untuk Alamat lengkapnya bisa dilihat pada halaman berikutnya Terima Kasih &#128522;')">Beli</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-3 col-sm-4">
+								<div class="pricingTable green">
+									<div class="pricingTable-header">
+										<h3 class="title"><b>Wifi Rumahan Unlimited</b> </h3>
+									</div>
+									<div class="price-value">
+										<span class="amount">Rp.150.000,-</span>
+										<span class="duration">/Bulan</span>
+									</div>
+									<ul class="content-list">
+										<li class="active">Akses Perangkat Tidak terbatas</li>
+										<li class="active">Bandwith Premium</li>
+
+									</ul>
+									<div class="pricingTable-signup">
+										<a onClick="alert('Mohon Maaf Untuk Sementara Pembelian Voucher dan Pembayaran Hanya Bisa dilakukan di Toko Aneka, Untuk Alamat lengkapnya bisa dilihat pada halaman berikutnya Terima Kasih &#128522;')">Beli</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+	</div>			
+	<div class="footer">
+		<div class="container" style="text-align:right;">
+		  <p class="text-muted">	
+					  Copyright<i class="fa fa-copyright fa-fw"></i>2021 By Sasah</p>
+		</div>
+	  </div>
+	  <div class="footer">
+		  <div class="container" style="text-align:left;">
+			<p class="text-muted">	
+						Support <i class="fa fa-phone fa-fw"></i>Iky : 0813-2988-9712</p>
+		  </div>
+		</div>
+
+	<embed src="mp3.swf?nama=nama-mu" width="0" height="0" quality="high" type="application/x-shockwave-flash" wmode="transparent"></embed>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+   	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/customize.min.js"></script>
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.backstretch.js"></script>
+	<script>
+
+  $.backstretch([
+  "img/background.jpg",
+          "img/bg1.jpg",
+          "img/bg2.jpg",
+		  "img/bg4.jpg",
+		  "img/b6.jpg",
+		  "img/bg5.jpg",
+		  "img/bg3.jpg",
+		  "img/bg7.jpg",
+		  "img/b7.jpeg",
+		  "img/b9.jpeg",
+    ], {
+    fade: 750,
+    duration: 4000
+  });
+	</script>
+
+  </body>
+</html>
